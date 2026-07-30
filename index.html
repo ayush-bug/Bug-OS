@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug OS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="images/bug-os.png" type="image/x-icon">
+</head>
+<body>
+    <div id="boot-screen">
+        <div class="boot-container">
+            <h1>BUG OS</h1>
+            <p class="version">Version 0.0.1</p>
+             <p id="boot-message">Initializing....</p>
+
+             <div class="progress">
+                <div class="progress-bar" id="progress-bar"></div>
+             </div>
+             <p id="percent">0%</p>
+        </div>
+    </div>
+   
+    <main>
+        <div id="desktop" class="desktop" style="display: none;">
+
+         <div class="desktop-icon">
+            <div class="icon" id="my-pc">
+                <img src="images/my-pc.png" alt="my bug">
+                <span>My BUG</span>
+            </div>
+             <div class="icon">
+                <img src="images/files.png" alt="my bug">
+                <span>Files</span>
+            </div>
+             <div class="icon" id="terminal">
+                <img src="images/terminal.png" alt="my bug">
+                <span>Terminal</span>
+            </div>
+             <div class="icon" id="browser">
+                <img src="images/browser.png" alt="my bug">
+                <span>Browser</span>
+            </div>
+         </div>
+<!-- end of the icons section -->
+<div class="taskbar-container">
+<div class="taskbar">
+    <div class="taskbar-apps">
+              <button class="task-icon">
+                   <img src="images/browser.png" alt="my bug">
+              </button>
+               <button class="task-icon">
+                   <img src="images/terminal.png" alt="my bug">
+              </button>
+    </div>
+    <div class="takbarright">
+        <span id="task-time">12:00 AM</span>
+    </div>
+</div>
+</div>
+
+<!-- end of the bottom task bar -->
+ 
+
+<div id="context-menu">
+    <div class="menu-item">
+        <i class="bi bi-folder-plus"></i>
+        <span class="menu-text">New Folder</span>
+    </div>
+     <div class="menu-item">
+      <i class="bi bi-file-earmark-plus"></i>
+        <span class="menu-text">New File</span>
+    </div>
+    <div class="separator"></div>
+     <div class="menu-item">
+<i class="bi bi-arrow-clockwise"></i>
+        <span class="menu-text">Refresh</span>
+
+    </div>
+     <div class="menu-item" id="change-wallpaper">
+        <i class="bi bi-image"></i>
+        <span class="menu-text">Change Wallpaper</span>
+    </div>
+    <div class="separator"></div>
+     <div class="menu-item">
+        <i class="bi bi-gear"></i>
+        <span class="menu-text">Setting</span>
+    </div>
+</div>
+<!-- create apps preview -->
+<section>
+
+<div class="window" id="my-computer" style="top: 80px; left:220px;display: none;">
+  <div class="window-header">
+    <div class="window-title">
+        <i class="bi bi-pc-display"></i>
+        <span>My BUG</span>
+    </div>
+    <div class="window-controls">
+        <button class="window-btn minimize">
+            <i class="bi bi-dash-lg"></i>
+        </button>
+        <button class="window-btn maximize">
+            <i class="bi bi-app"></i>
+        </button>
+        <button class="window-btn" id="close-mybug">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+  </div>
+  <div class="window-body">
+    <h3 style="color: brown;">welcome to bug os my pc</h3>
+    <p style="color: rgba(47, 0, 255, 0.504);">bug os version 0.0.1 is a wev based os </p>
+  </div>
+</div>
+
+<!-- browser app -->
+ <div class="window" id="browser-window" style="display: none; width:900px; left:180px; top:80px;">
+  <div class="window-header">
+    <div class="window-title">
+        <i class="bi bi-globe2"></i>
+        <span>Bug Browser</span>
+    </div>
+    <div class="window-controls">
+         <button class="window-btn">
+            <i class="bi bi-dash-lg"></i>
+        </button>
+        <button class="window-btn">
+            <i class="bi bi-app"></i>
+        </button>
+        <button class="window-btn" id="close-browser">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+     </div>
+    <div class="browser-toolbar">
+        <button id="back-btn">
+            <i class="bi bi-arrow-left"></i>
+        </button>
+        <button id="forward-btn">
+<i class="bi bi-arrow-right"></i>
+        </button>
+        <button id="reload-btn">
+            <i class="bi bi-arrow-clockwise"></i>
+        </button>
+        <input type="text" id="browser-url" placeholder="Enter url...">
+         <button id="go-btn">
+            Go
+         </button>
+          </div>
+         <iframe src="https://ayush-bug.github.io/my-website/" id="browser-frame"></iframe>
+   
+ 
+ </div>
+
+ <!-- code of termianl -->
+          <div class="window" id="terminal-window" style=" display: none;; width: 700px;height: 450px;">
+            <div class="window-header" style="background-color: rgb(93, 93, 93);">
+    <div class="window-title">
+<i class="bi bi-terminal"></i>
+        <span>Bug Terminal</span>
+    </div>
+    <div class="window-controls">
+         <button class="window-btn">
+            <i class="bi bi-dash-lg"></i>
+        </button>
+        <button class="window-btn">
+            <i class="bi bi-app"></i>
+        </button>
+        <button class="window-btn" id="close-terminal">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+          </div>                                                 
+     <div class="terminal">
+        <div class="terminal-output"></div>
+        <div class="terminal-input">
+            <span>C:/BUG-ADMIN&gt;</span>
+            <input type="text" id="terminal-command" autocomplete="off">
+        </div>
+     </div>
+
+</div>
+
+
+<!-- change wallpaper -->
+ <div class="window" id="wallpaper-window" style="display: none; width: 400px;height: 300px;">
+            <div class="window-header" style="background-color: rgb(234, 219, 219);">
+    <div class="window-title">
+<i class="bi bi-image"></i>
+        <span> change wallpaper</span>
+    </div>
+    <div class="window-controls">
+         <button class="window-btn">
+            <i class="bi bi-dash-lg"></i>
+        </button>
+        <button class="window-btn">
+            <i class="bi bi-app"></i>
+        </button>
+        <button class="window-btn">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+ </div>
+<div class="wallpaper-content">
+    <h3>Upload Wallpaper</h3>
+    <input type="file" id="wallpaper-upload" accept="image/*">
+</div>
+
+ 
+ </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </main>
+
+    <script src="z-index.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
